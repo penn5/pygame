@@ -40,6 +40,7 @@ class Rect(object):
     centerx: int
     centery: int
     size: Tuple[int, int]
+    base: "Rect"
     width: int
     height: int
     w: int
