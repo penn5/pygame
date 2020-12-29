@@ -37,10 +37,10 @@
        topleft, bottomleft, topright, bottomright
        midtop, midleft, midbottom, midright
        center, centerx, centery
-       size, width, height
+       size, base, width, height
        w,h
 
-   All of these attributes can be assigned to:
+   All of these attributes except ``base`` can be assigned to:
 
    ::
 
