@@ -55,6 +55,9 @@ class RectTypeTest(unittest.TestCase):
         self.assertEqual((r.centerx, r.bottom), r.midbottom)
         self.assertEqual((r.left, r.centery), r.midleft)
         self.assertEqual((r.right, r.centery), r.midright)
+        
+        self.assertEqual((0, 0), r.base.topleft)
+        self.assertEqual(r.size, r.base.size)
 
     def test_normalize(self):
         """Ensures normalize works when width and height are both negative."""
