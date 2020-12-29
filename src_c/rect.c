@@ -579,6 +579,13 @@ pg_rect_unionall_ip(pgRectObject *self, PyObject *args)
 }
 
 static PyObject *
+pg_rect_getbase(pgRectObject *self, PyObject *args)
+{
+    return _pg_rect_subtype_new4(Py_TYPE(self), 0, 0,
+                                 self->r.w, self->r.h);
+}
+
+static PyObject *
 pg_rect_collidepoint(pgRectObject *self, PyObject *args)
 {
     int x, y;
@@ -2030,6 +2037,7 @@ static PyGetSetDef pg_rect_getsets[] = {
     {"size", (getter)pg_rect_getsize, (setter)pg_rect_setsize, NULL, NULL},
     {"center", (getter)pg_rect_getcenter, (setter)pg_rect_setcenter, NULL,
      NULL},
+    {"base", (getter)pg_rect_getbase, NULL, NULL, NULL},
 
     {"__safe_for_unpickling__", (getter)pg_rect_getsafepickle, NULL, NULL,
      NULL},
